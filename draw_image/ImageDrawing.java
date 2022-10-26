@@ -33,12 +33,12 @@ public class ImageDrawing
       width = (int)(width * scale);
       Image image = icon.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT);
       icon.setImage(image);
-      mainFrame.pack();
+      //mainFrame.pack();
    }
 
    public static void main(String []args)
    {
-      DrawImage drawing = new DrawImage();
-      drawing.resize(1.5);
+      ImageDrawing drawing = new ImageDrawing();
+      drawing.resize(0.5);
    }
 }

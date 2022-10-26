@@ -6,11 +6,14 @@ public class Drawing implements Icon
    JFrame mainFrame;
    JPanel mainPanel;
    JLabel imageLabel;
-   int height = 200;
-   int width = 200;
+   int height;
+   int width;
 
-   public Drawing()
+   public Drawing(int width, int height)
    {
+      this.width = width;
+      this.height = height;
+
       mainFrame = new JFrame();
       mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -40,9 +43,8 @@ public class Drawing implements Icon
    @Override
    public void paintIcon(Component component, Graphics graphics, int x, int y)
    {
-      System.out.println(component);
       graphics.setColor(Color.BLUE);
-      graphics.fillRect(x, y, height, width);
+      graphics.fillRect(x, y, width, height);
 
       graphics.setColor(Color.WHITE);
       int diameter1 = this.height/8;
@@ -56,6 +58,6 @@ public class Drawing implements Icon
 
    public static void main(String []args)
    {
-      Drawing drawing = new Drawing();
+      Drawing drawing = new Drawing(200,200);
    }
 }
